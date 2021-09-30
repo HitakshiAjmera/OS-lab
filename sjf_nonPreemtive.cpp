@@ -5,7 +5,7 @@ using namespace std ;
 
 int main()
 {
-	int n,total=0;
+    int n,total=0;
     float avg_wt,avg_tat;
     cout<<"Enter the number of process:";
     cin>>n;
@@ -33,6 +33,7 @@ int main()
         P[i]=P[pos];
         P[pos]=temp;
     }
+//Finding waiting time of process
     WT[0]=0;            
     for(int i=1;i<n;i++)
     {
@@ -46,7 +47,7 @@ int main()
     cout<<"\nProcess\t\tBurst Time\tWaiting Time\tTurnaround Time";
     for(int i=0;i<n;i++)
     {
-        TAT[i]=BT[i]+WT[i];   
+        TAT[i]=BT[i]+WT[i];  //formula for TAT 
         total+=TAT[i];
         cout<<"\nP"<<P[i]<<"\t\t  "<<BT[i]<<"\t\t    "<<WT[i]<<"\t\t\t"<<TAT[i];
     }
